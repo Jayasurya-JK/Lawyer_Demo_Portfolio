@@ -49,7 +49,7 @@ export default function MobileStickyCTA() {
               <span className="text-xs font-semibold">Contact</span>
             </a>
 
-            {/* WhatsApp Button (optional - can be enabled if needed) */}
+            {/* Email Button */}
             <a
               href={`mailto:${SITE_CONFIG.contact.email}`}
               className="flex-1 flex flex-col items-center justify-center py-3 px-2 text-white hover:bg-primary-800 transition-colors touch-target"
