@@ -2,6 +2,9 @@ import Hero from '@/components/sections/Hero'
 import Card from '@/components/ui/Card'
 import TestimonialCard from '@/components/ui/TestimonialCard'
 import CTASection from '@/components/sections/CTASection'
+import FAQ from '@/components/sections/FAQ'
+import CaseResults from '@/components/sections/CaseResults'
+import TrustSignals from '@/components/sections/TrustSignals'
 import { PersonSchema, LegalServiceSchema, LocalBusinessSchema } from '@/components/seo/Schema'
 import { PRACTICE_AREAS, TESTIMONIALS, LAWYER_PROFILE } from '@/lib/constants'
 
@@ -49,6 +52,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Results / Stats Section */}
+      <CaseResults />
+
       {/* Practice Areas Section */}
       <section className="section-padding bg-primary-50">
         <div className="container-custom">
@@ -81,6 +87,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trust Signals Section */}
+      <TrustSignals />
 
       {/* Credentials Section */}
       <section className="section-padding bg-white">
@@ -142,6 +151,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <CTASection />
