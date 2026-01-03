@@ -2,6 +2,9 @@ import Hero from '@/components/sections/Hero'
 import Card from '@/components/ui/Card'
 import TestimonialCard from '@/components/ui/TestimonialCard'
 import CTASection from '@/components/sections/CTASection'
+import FAQ from '@/components/sections/FAQ'
+import CaseResults from '@/components/sections/CaseResults'
+import TrustSignals from '@/components/sections/TrustSignals'
 import { PersonSchema, LegalServiceSchema, LocalBusinessSchema } from '@/components/seo/Schema'
 import { PRACTICE_AREAS, TESTIMONIALS, LAWYER_PROFILE } from '@/lib/constants'
 
@@ -18,17 +21,18 @@ export default function Home() {
       {/* Why Choose Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-900 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="heading-lg mb-4 md:mb-6">
               Why Choose {LAWYER_PROFILE.name}?
             </h2>
-            <p className="text-lg text-primary-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-primary-600 max-w-3xl mx-auto px-4">
               Combining deep legal expertise with practical business understanding to deliver 
               solutions that protect and empower your business.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Mobile: Single column, Tablet: 2 columns, Desktop: 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <Card
               icon="🎯"
               title="Business-Focused Approach"
@@ -48,19 +52,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Case Results / Stats Section */}
+      <CaseResults />
+
       {/* Practice Areas Section */}
       <section className="section-padding bg-primary-50">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-900 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="heading-lg mb-4 md:mb-6">
               Practice Areas
             </h2>
-            <p className="text-lg text-primary-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-primary-600 max-w-3xl mx-auto px-4">
               Comprehensive legal services tailored to your business needs
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Mobile: Single column, Tablet: 2 columns, Desktop: 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {PRACTICE_AREAS.map((area) => (
               <Card
                 key={area.id}
@@ -72,7 +80,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 md:mt-12">
             <a href="/practice-areas/" className="btn-primary inline-block">
               View All Services
             </a>
@@ -80,37 +88,41 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Signals Section */}
+      <TrustSignals />
+
       {/* Credentials Section */}
       <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-900 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="heading-lg mb-4">
               Professional Credentials
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div>
-              <h3 className="text-xl font-serif font-bold text-primary-900 mb-4">Education</h3>
+          {/* Mobile: Single column, Desktop: 2 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
+            <div className="card">
+              <h3 className="heading-sm mb-4 md:mb-6">Education</h3>
               <ul className="space-y-3">
                 {LAWYER_PROFILE.education.map((edu, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="text-accent-500 mr-2">✓</span>
-                    <span className="text-primary-700">{edu}</span>
+                    <span className="text-accent-500 mr-3 text-xl flex-shrink-0">✓</span>
+                    <span className="text-primary-700 text-sm sm:text-base">{edu}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-xl font-serif font-bold text-primary-900 mb-4">
+            <div className="card">
+              <h3 className="heading-sm mb-4 md:mb-6">
                 Professional Memberships
               </h3>
               <ul className="space-y-3">
                 {LAWYER_PROFILE.memberships.map((membership, index) => (
                   <li key={index} className="flex items-start">
-                    <span className="text-accent-500 mr-2">✓</span>
-                    <span className="text-primary-700">{membership}</span>
+                    <span className="text-accent-500 mr-3 text-xl flex-shrink-0">✓</span>
+                    <span className="text-primary-700 text-sm sm:text-base">{membership}</span>
                   </li>
                 ))}
               </ul>
@@ -122,22 +134,26 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="section-padding bg-primary-50">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-900 mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="heading-lg mb-4 md:mb-6">
               Client Testimonials
             </h2>
-            <p className="text-lg text-primary-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-primary-600 max-w-3xl mx-auto px-4">
               Trusted by businesses and professionals across industries
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Mobile: Single column, Desktop: 3 columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {TESTIMONIALS.map((testimonial) => (
               <TestimonialCard key={testimonial.id} testimonial={testimonial} />
             ))}
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* CTA Section */}
       <CTASection />
